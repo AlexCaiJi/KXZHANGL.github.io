@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
-  <title>第三方布局框架Neon初探 | 半山的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="github地址：https://github.com/mamaral/Neon 居中设置 view 在 superview 的中心，调用 anchorInCenter()并设置view大小,相当于frame center12view1.anchorInCenter(width: 300, height: 300)imgV.anchorInCenter(width: 150, height: 15">
+    <meta charset="utf-8">
+<title>第三方布局框架Neon初探 - 半山的博客</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    
+    <meta name="description" content="github地址：https://github.com/mamaral/Neon 居中设置 view 在 superview 的中心，调用 anchorInCenter()并设置view大小,相当于frame center12view1.anchorInCenter(width: 300, height: 300)imgV.anchorInCenter(width: 150, height: 15">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第三方布局框架Neon初探">
 <meta property="og:url" content="http://yoursite.com/2019/03/19/第三方布局框架Neon初探/index.html">
@@ -30,295 +33,778 @@
 <meta name="twitter:title" content="第三方布局框架Neon初探">
 <meta name="twitter:description" content="github地址：https://github.com/mamaral/Neon 居中设置 view 在 superview 的中心，调用 anchorInCenter()并设置view大小,相当于frame center12view1.anchorInCenter(width: 300, height: 300)imgV.anchorInCenter(width: 150, height: 15">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7787328-031e083b031a51f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-  
-    <link rel="alternate" href="/atom.xml" title="半山的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/plugin/bganimation/bg.css">
-  
 
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
 </head>
-</html>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <div class="outer">
-        <div class="widget-wrap mobile-header">
-  <h3 class="widget-title"></h3>
-  <div class="widget">
-    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
-    <h2 class="author">John 半山</h2>
-    <h3 class="description">弱者才会易怒如虎,强者通常平静如水</h3>
-    <div class="count-box">
-      <a href="/archives"><div><strong>2</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>0</strong><br>标签</div></a>
-    </div>
-    <ul class="blog-link">
-     
-          <a href="/" title="Home">
-            <li>主页</li>
-          </a>
-        
-          <a href="/archives" title="Archives">
-            <li>归档</li>
-          </a>
-        
-          <a href="/categories" title="Categories">
-            <li>分类</li>
-          </a>
-        
-          <a href="/tags" title="Tags">
-            <li>标签</li>
-          </a>
-        
-    </ul>
-  </div>
-</div>
-
-        <section id="main"><article id="post-第三方布局框架Neon初探" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/19/第三方布局框架Neon初探/" class="article-date">
-  <time class="post-time" datetime="2019-03-19T07:44:06.454Z" itemprop="datePublished">
-    <span class="post-month">3月</span><br>
-    <span class="post-day">19</span>
-  </time>
-</a>
-   
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      第三方布局框架Neon初探
-    </h1>
-  
-
-        <div>
-          
-          
-              
-
-          
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="第三方布局框架Neon初探" height="28">
+            
+            </a>
         </div>
-      </header>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>github地址：<a href="https://github.com/mamaral/Neon" target="_blank" rel="noopener">https://github.com/mamaral/Neon</a></p>
-<h2 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h2><p>设置 view 在 superview 的中心，调用 anchorInCenter()并设置view大小,相当于frame center<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCenter(width: 300, height: 300)</span><br><span class="line">imgV.anchorInCenter(width: 150, height: 150)</span><br></pre></td></tr></table></figure></p>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-19T07:44:06.454Z">2019-03-19</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1020 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                第三方布局框架Neon初探
+            
+        </h1>
+        <div class="content">
+            <p>github地址：<a href="https://github.com/mamaral/Neon" target="_blank" rel="noopener">https://github.com/mamaral/Neon</a></p>
+<h2 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h2><p>设置 view 在 superview 的中心，调用 anchorInCenter()并设置view大小,相当于frame center<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCenter(width: 300, height: 300)</span><br><span class="line">imgV.anchorInCenter(width: 150, height: 150)</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-031e083b031a51f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2019-03-18 下午5.50.10.png"></p>
-<h2 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h2><p>如果想 view 填充superview，设置距离superview的边框距离, 调用 fillSuperview()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">imgV.fillSuperview()</span><br><span class="line">imgV.fillSuperview(left: 20, right: 5, top: 30, bottom: 5)</span><br></pre></td></tr></table></figure></p>
+<h2 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h2><p>如果想 view 填充superview，设置距离superview的边框距离, 调用 fillSuperview()<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">imgV.fillSuperview()</span><br><span class="line">imgV.fillSuperview(left: 20, right: 5, top: 30, bottom: 5)</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-8ac56cccd11053be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2019-03-18 下午5.56.50.png"></p>
-<h2 id="角对齐"><a href="#角对齐" class="headerlink" title="角对齐"></a>角对齐</h2><p>view 相对于 superview 固定于某个角，调用anchorInCorner(),并传入要对齐哪个角的参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCorner(.topLeft, xPad: 20, yPad: 100, width: 100, height: 100)</span><br><span class="line">view2.anchorInCorner(.topRight, xPad: 20, yPad: 50, width: 100, height: 100)</span><br><span class="line">view3.anchorInCorner(.bottomLeft, xPad: 20, yPad: 20, width: 100, height: 100)</span><br><span class="line">view4.anchorInCorner(.bottomRight, xPad: 20, yPad: 30, width: 100, height: 100)</span><br></pre></td></tr></table></figure></p>
+<h2 id="角对齐"><a href="#角对齐" class="headerlink" title="角对齐"></a>角对齐</h2><p>view 相对于 superview 固定于某个角，调用anchorInCorner(),并传入要对齐哪个角的参数<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCorner(.topLeft, xPad: 20, yPad: 100, width: 100, height: 100)</span><br><span class="line">view2.anchorInCorner(.topRight, xPad: 20, yPad: 50, width: 100, height: 100)</span><br><span class="line">view3.anchorInCorner(.bottomLeft, xPad: 20, yPad: 20, width: 100, height: 100)</span><br><span class="line">view4.anchorInCorner(.bottomRight, xPad: 20, yPad: 30, width: 100, height: 100)</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-7c0e7991174be47d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot - iPhone XS Max - 2019-03-18 at 18.01.17.png"></p>
-<h2 id="边对齐"><a href="#边对齐" class="headerlink" title="边对齐"></a>边对齐</h2><p>如果想让 view 相对于 superview 的某一边依靠对齐，调用anchorToEdge,自动居中对齐<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorToEdge(.top, padding: 300, width: 100, height: 100)</span><br><span class="line">view2.anchorToEdge(.left, padding: 0, width: 100, height: 100)</span><br><span class="line">view3.anchorToEdge(.bottom, padding: 88, width: 100, height: 100)</span><br><span class="line">view4.anchorToEdge(.right, padding: 0, width: 100, height: 100)</span><br></pre></td></tr></table></figure></p>
+<h2 id="边对齐"><a href="#边对齐" class="headerlink" title="边对齐"></a>边对齐</h2><p>如果想让 view 相对于 superview 的某一边依靠对齐，调用anchorToEdge,自动居中对齐<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorToEdge(.top, padding: 300, width: 100, height: 100)</span><br><span class="line">view2.anchorToEdge(.left, padding: 0, width: 100, height: 100)</span><br><span class="line">view3.anchorToEdge(.bottom, padding: 88, width: 100, height: 100)</span><br><span class="line">view4.anchorToEdge(.right, padding: 0, width: 100, height: 100)</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-a182f5bd1905126b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot - iPhone XS Max - 2019-03-18 at 18.04.10.png"></p>
-<h2 id="边填充"><a href="#边填充" class="headerlink" title="边填充"></a>边填充</h2><p>如果想让 view 相对于 superview 的某一边居中对齐并自动填拉伸充，调用anchorAndFillEdge()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorAndFillEdge(.top, xPad: size + 5, yPad: 88, otherSize: size)</span><br><span class="line">view2.anchorAndFillEdge(.bottom, xPad: size + 5, yPad: 83, otherSize: size)</span><br><span class="line">view3.anchorAndFillEdge(.left, xPad: 0, yPad: 0, otherSize: size)</span><br><span class="line">view4.anchorAndFillEdge(.right, xPad: 0, yPad: 0, otherSize: size)</span><br></pre></td></tr></table></figure></p>
+<h2 id="边填充"><a href="#边填充" class="headerlink" title="边填充"></a>边填充</h2><p>如果想让 view 相对于 superview 的某一边居中对齐并自动填拉伸充，调用anchorAndFillEdge()<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorAndFillEdge(.top, xPad: size + 5, yPad: 88, otherSize: size)</span><br><span class="line">view2.anchorAndFillEdge(.bottom, xPad: size + 5, yPad: 83, otherSize: size)</span><br><span class="line">view3.anchorAndFillEdge(.left, xPad: 0, yPad: 0, otherSize: size)</span><br><span class="line">view4.anchorAndFillEdge(.right, xPad: 0, yPad: 0, otherSize: size)</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-0777f3fbb5622247.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot - iPhone XS Max - 2019-03-18 at 18.08.44.png"></p>
-<h2 id="相对对齐"><a href="#相对对齐" class="headerlink" title="相对对齐"></a>相对对齐</h2><h5 id="距离相对view右边-居-上-中-下"><a href="#距离相对view右边-居-上-中-下" class="headerlink" title="距离相对view右边 居 上-中-下"></a>距离相对view右边 居 上-中-下</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCenter(width: 200, height: 200)</span><br><span class="line">view2.align(.toTheRightMatchingTop, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view3.align(.toTheRightMatchingBottom, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view4.align(.toTheRightCentered, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br></pre></td></tr></table></figure>
+<h2 id="相对对齐"><a href="#相对对齐" class="headerlink" title="相对对齐"></a>相对对齐</h2><h5 id="距离相对view右边-居-上-中-下"><a href="#距离相对view右边-居-上-中-下" class="headerlink" title="距离相对view右边 居 上-中-下"></a>距离相对view右边 居 上-中-下</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCenter(width: 200, height: 200)</span><br><span class="line">view2.align(.toTheRightMatchingTop, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view3.align(.toTheRightMatchingBottom, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view4.align(.toTheRightCentered, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-a1cbb1692946a3cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot - iPhone XS Max - 2019-03-18 at 18.14.20.png"></p>
-<h5 id="距离相对view左边-居-上-中-下"><a href="#距离相对view左边-居-上-中-下" class="headerlink" title="距离相对view左边 居 上 中 下"></a>距离相对view左边 居 上 中 下</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">view2.align(.toTheLeftMatchingTop, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view3.align(.toTheLeftMatchingBottom, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view4.align(.toTheLeftCentered, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br></pre></td></tr></table></figure>
+<h5 id="距离相对view左边-居-上-中-下"><a href="#距离相对view左边-居-上-中-下" class="headerlink" title="距离相对view左边 居 上 中 下"></a>距离相对view左边 居 上 中 下</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">view2.align(.toTheLeftMatchingTop, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view3.align(.toTheLeftMatchingBottom, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view4.align(.toTheLeftCentered, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-cef670c1d98302a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot - iPhone XS Max - 2019-03-18 at 18.15.48.png"></p>
-<h5 id="距离相对view下边-居-上-中-下"><a href="#距离相对view下边-居-上-中-下" class="headerlink" title="距离相对view下边 居 上 中 下"></a>距离相对view下边 居 上 中 下</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">view2.align(.underMatchingLeft, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view3.align(.underMatchingRight, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view4.align(.underCentered, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br></pre></td></tr></table></figure>
-<h5 id="距离相对view上边-居-上-中-下"><a href="#距离相对view上边-居-上-中-下" class="headerlink" title="距离相对view上边 居 上 中 下"></a>距离相对view上边 居 上 中 下</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">view2.align(.aboveMatchingLeft, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view3.align(.aboveMatchingRight, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view4.align(.aboveCentered, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br></pre></td></tr></table></figure>
-<h2 id="对齐并填充"><a href="#对齐并填充" class="headerlink" title="对齐并填充"></a>对齐并填充</h2><p>不知道或者没法指定一个相对视图的大小，但又要兼顾填充和对齐，并且还依赖与相邻的 view。调用alignAndFill()、alignAndFillWidth()、alignAndFillHeight()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCenter(width: 200, height: 200)</span><br><span class="line">view2.alignAndFillWidth(align: .toTheRightMatchingTop, relativeTo: view1, padding: 5, height: 30)</span><br><span class="line">view3.alignAndFillHeight(align: .aboveCentered, relativeTo: view1, padding: 50, width: 60)</span><br><span class="line">view4.alignAndFill(align: .toTheLeftMatchingTop, relativeTo: view1, padding: 5)</span><br></pre></td></tr></table></figure></p>
+<h5 id="距离相对view下边-居-上-中-下"><a href="#距离相对view下边-居-上-中-下" class="headerlink" title="距离相对view下边 居 上 中 下"></a>距离相对view下边 居 上 中 下</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">view2.align(.underMatchingLeft, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view3.align(.underMatchingRight, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view4.align(.underCentered, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br></pre></td></tr></table></figure>
+<h5 id="距离相对view上边-居-上-中-下"><a href="#距离相对view上边-居-上-中-下" class="headerlink" title="距离相对view上边 居 上 中 下"></a>距离相对view上边 居 上 中 下</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">view2.align(.aboveMatchingLeft, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view3.align(.aboveMatchingRight, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br><span class="line">view4.align(.aboveCentered, relativeTo: view1, padding: 5, width: 50, height: 50)</span><br></pre></td></tr></table></figure>
+<h2 id="对齐并填充"><a href="#对齐并填充" class="headerlink" title="对齐并填充"></a>对齐并填充</h2><p>不知道或者没法指定一个相对视图的大小，但又要兼顾填充和对齐，并且还依赖与相邻的 view。调用alignAndFill()、alignAndFillWidth()、alignAndFillHeight()<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCenter(width: 200, height: 200)</span><br><span class="line">view2.alignAndFillWidth(align: .toTheRightMatchingTop, relativeTo: view1, padding: 5, height: 30)</span><br><span class="line">view3.alignAndFillHeight(align: .aboveCentered, relativeTo: view1, padding: 50, width: 60)</span><br><span class="line">view4.alignAndFill(align: .toTheLeftMatchingTop, relativeTo: view1, padding: 5)</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-c02c64834dd276a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot - iPhone XS Max - 2019-03-18 at 18.27.19.png"></p>
 <h2 id="挤压对齐"><a href="#挤压对齐" class="headerlink" title="挤压对齐"></a>挤压对齐</h2><p>如果两个 view 夹着中间一个 view 的需求，调用alignBetweenHorizontal()和alignBetweenVertical()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCenter(width: 150, height: 300)</span><br><span class="line">view2.align(.toTheRightMatchingTop, relativeTo: view1, padding: 5, width: 100, height: 100)</span><br><span class="line">view3.align(.toTheRightMatchingBottom, relativeTo: view1, padding: 5, width: 100, height: 100)</span><br><span class="line">view4.align(.toTheRightCentered, relativeTo: view1, padding: 5, width: 100, height: 100)</span><br><span class="line">view4.alignBetweenVertical(align: .aboveMatchingRight, primaryView: view3, secondaryView: view2, padding: 10, width: 50)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCenter(width: 150, height: 300)</span><br><span class="line">view2.align(.toTheRightMatchingTop, relativeTo: view1, padding: 5, width: 100, height: 100)</span><br><span class="line">view3.align(.toTheRightMatchingBottom, relativeTo: view1, padding: 5, width: 100, height: 100)</span><br><span class="line">view4.align(.toTheRightCentered, relativeTo: view1, padding: 5, width: 100, height: 100)</span><br><span class="line">view4.alignBetweenVertical(align: .aboveMatchingRight, primaryView: view3, secondaryView: view2, padding: 10, width: 50)</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-95f45e0f6d1aa0ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot - iPhone XS Max - 2019-03-18 at 18.40.08.png"></p>
 <h2 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h2><p>多个view一起组合布局,调用groupInCenter()、groupInCorner()、groupAgainstEdge()</p>
-<h5 id="居中对齐组合"><a href="#居中对齐组合" class="headerlink" title="居中对齐组合"></a>居中对齐组合</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view.groupInCenter(group: .vertical, views: [view1,view2,view3], padding: 10, width: size, height: size)</span><br><span class="line">view.groupInCenter(group: .horizontal, views: [view1,view2,view3], padding: 20, width: size, height: size)</span><br></pre></td></tr></table></figure>
+<h5 id="居中对齐组合"><a href="#居中对齐组合" class="headerlink" title="居中对齐组合"></a>居中对齐组合</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view.groupInCenter(group: .vertical, views: [view1,view2,view3], padding: 10, width: size, height: size)</span><br><span class="line">view.groupInCenter(group: .horizontal, views: [view1,view2,view3], padding: 20, width: size, height: size)</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-e30dccfafbb60d42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2019-03-19 上午11.26.05.png"></p>
-<h5 id="角对齐组合-相对于superview某一个角组合排布"><a href="#角对齐组合-相对于superview某一个角组合排布" class="headerlink" title="角对齐组合 相对于superview某一个角组合排布"></a>角对齐组合 相对于superview某一个角组合排布</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view.groupInCorner(group: .horizontal, views: [view1, view2, view3], inCorner: .bottomLeft, padding: 10, width: size, height: size)</span><br><span class="line">view.groupInCorner(group: .vertical, views: [view1, view2, view3], inCorner: .bottomRight, padding: 10, width: size, height: size)</span><br></pre></td></tr></table></figure>
+<h5 id="角对齐组合-相对于superview某一个角组合排布"><a href="#角对齐组合-相对于superview某一个角组合排布" class="headerlink" title="角对齐组合 相对于superview某一个角组合排布"></a>角对齐组合 相对于superview某一个角组合排布</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view.groupInCorner(group: .horizontal, views: [view1, view2, view3], inCorner: .bottomLeft, padding: 10, width: size, height: size)</span><br><span class="line">view.groupInCorner(group: .vertical, views: [view1, view2, view3], inCorner: .bottomRight, padding: 10, width: size, height: size)</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-02cdb30aa15e04c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2019-03-19 上午11.28.49.png"></p>
-<h5 id="边对齐组合-相对于superview某一条边的中点排布"><a href="#边对齐组合-相对于superview某一条边的中点排布" class="headerlink" title="边对齐组合,相对于superview某一条边的中点排布"></a>边对齐组合,相对于superview某一条边的中点排布</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view.groupAgainstEdge(group: .horizontal, views: [view1, view2, view3], againstEdge: .left, padding: 10, width: size, height: size)</span><br><span class="line">view.groupAgainstEdge(group: .vertical, views: [view1, view2, view3], againstEdge: .bottom, padding: 10, width: size, height: size)</span><br></pre></td></tr></table></figure>
+<h5 id="边对齐组合-相对于superview某一条边的中点排布"><a href="#边对齐组合-相对于superview某一条边的中点排布" class="headerlink" title="边对齐组合,相对于superview某一条边的中点排布"></a>边对齐组合,相对于superview某一条边的中点排布</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view.groupAgainstEdge(group: .horizontal, views: [view1, view2, view3], againstEdge: .left, padding: 10, width: size, height: size)</span><br><span class="line">view.groupAgainstEdge(group: .vertical, views: [view1, view2, view3], againstEdge: .bottom, padding: 10, width: size, height: size)</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-c60dde25111f0881.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Simulator Screen Shot - iPhone XS Max - 2019-03-19 at 11.34.19.png"></p>
 <p>最后,我想说<br><img src="https://upload-images.jianshu.io/upload_images/7787328-596241b81f97af1f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="0FC4A788F2D326B5CFD19EDB76E96ADE.jpg"></p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/19/第三方布局框架Neon初探/" data-id="cjtfmu7mm0001aqzjnayifq1r" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2019/03/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    <div class="widget-wrap">
-  <h3 class="widget-title"></h3>
-  <div class="widget">
-    <h1 class="blog-title">半山的博客</h1>
-    <h2 class="blog-subtitle">弱者才会易怒如虎,强者通常平静如水</h2>
-    <ul class="blog-link">
-     
-          <a href="/" title="Home">
-            <li>主页</li>
-          </a>
-        
-          <a href="/archives" title="Archives">
-            <li>归档</li>
-          </a>
-        
-          <a href="/categories" title="Categories">
-            <li>分类</li>
-          </a>
-        
-          <a href="/tags" title="Tags">
-            <li>标签</li>
-          </a>
-        
-    </ul>
-  </div>
-</div>
-
-  
-    <div class="widget-wrap">
-  <h3 class="widget-title"></h3>
-  <div class="widget">
-    <img class="avatar" src="https://avatars0.githubusercontent.com/u/20333903?v=3&amp;s=460">
-    <h2 class="author">John 半山</h2>
-    <h3 class="description">弱者才会易怒如虎,强者通常平静如水</h3>
-    <div class="count-box">
-      <a href="/archives"><div><strong>2</strong><br>文章</div></a>
-      <a href="/categories"><div><strong>0</strong><br>分类</div></a>
-      <a href="/tags"><div><strong>0</strong><br>标签</div></a>
-    </div>
-
-
-
-    <div class="social-link">
-      
-        <a class="hvr-bounce-in" href="http://github.com/ShanaMaid" target="_blank" title="Github">
-          Github
-        </a>
-      
-    </div>
-
-    <div class="friend-link">
-      <h2>友情链接</h2>
-      
-        <a class="hvr-bounce-in" href="http://blog.shanamaid.top/" target="_blank" title="ShanaMaid">
-          ShanaMaid
-        </a>
-      
-    </div>
-  </div>
-</div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy;2018 - 2019 John 半山<br>
-      由<a href="http://hexo.io/" target="_blank">Hexo</a>强力驱动 | 
-      主题-<a href="https://github.com/ShanaMaid/hexo-theme-shana">Shana</a>
-      
-    </div>
-    
-  </div>
-</footer>
-    </div>
-    
-
-<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="//apps.bdimg.com/libs/wow/0.1.6/wow.min.js"></script>
-<script>
-new WOW().init();
-</script>   
-
-
-  <link rel="stylesheet" href="/plugin/fancybox/jquery.fancybox.css">
-  <script src="/plugin/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-  <link rel="stylesheet" href="/plugin/galmenu/GalMenu.css">
-  <script src="/plugin/galmenu/GalMenu.js"></script>
-  <div class="GalMenu GalDropDown">
-      <div class="circle" id="gal">
-        <div class="ring">
-          
-            <a href="/" title class="menuItem">首页</a>
-          
-            <a href="/tags" title class="menuItem">标签</a>
-          
-            <a href="/categories" title class="menuItem">分类</a>
-          
-            <a href="/archives" title class="menuItem">归档</a>
-          
-            <a href="/xxxxxxxxx" title class="menuItem">xxx</a>
-          
-            <a href="/xxxxxxx" title class="menuItem">xxxx</a>
-          
         </div>
         
-          <audio id="audio" src="#"></audio>
         
-      </div> 
+        
+    </div>
 </div>
-<div id="overlay" style="opacity: 1; cursor: pointer;"></div>
-  <script type="text/javascript">var items = document.querySelectorAll('.menuItem');
-    for (var i = 0,
-    l = items.length; i < l; i++) {
-      items[i].style.left = (50 - 35 * Math.cos( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%";
-      items[i].style.top = (50 + 35 * Math.sin( - 0.5 * Math.PI - 2 * (1 / l) * i * Math.PI)).toFixed(4) + "%"
-    }</script>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('body').GalMenu({
-      'menu': 'GalDropDown'
-    })
-  });
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
+
+<div class="notification is-danger">
+    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+                
+<div class="notification is-danger">
+    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
+</div>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/19/hello-world/">
+                <span class="level-item">Hello World</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/avatar.png" alt="Your name">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Your name
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Your title
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Your location</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        0
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        0
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/ppoffice" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/ppoffice">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="http://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="http://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="http://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/03/19/第三方布局框架Neon初探/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="第三方布局框架Neon初探">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T07:44:06.454Z">2019-03-19</time></div>
+                    <a href="/2019/03/19/第三方布局框架Neon初探/" class="has-link-black-ter is-size-6">第三方布局框架Neon初探</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/03/19/hello-world/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T06:52:52.687Z">2019-03-19</time></div>
+                    <a href="/2019/03/19/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/03/19/第三方布局框架Neon初探/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="第三方布局框架Neon初探">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T07:44:06.454Z">2019-03-19</time></div>
+                    <a href="/2019/03/19/第三方布局框架Neon初探/" class="has-link-black-ter is-size-6">第三方布局框架Neon初探</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/03/19/hello-world/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T06:52:52.687Z">2019-03-19</time></div>
+                    <a href="/2019/03/19/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="第三方布局框架Neon初探" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 John 半山&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-Hans");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
 </script>
 
-  <section class="hidden-xs"> 
-  <ul class="cb-slideshow"> 
-    <li><span>苟利</span></li> 
-    <li><span>国家</span></li> 
-    <li><span>生死以</span></li> 
-    <li><span>岂能</span></li> 
-    <li><span>祸福</span></li> 
-    <li><span>趋避之</span></li> 
-  </ul>
-</section>
-<script src="/js/script.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
 
 
+    
+    
 
-  </div>
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
 </body>
 </html>
