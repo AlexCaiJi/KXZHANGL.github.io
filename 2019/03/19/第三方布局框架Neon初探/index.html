@@ -17,7 +17,7 @@
 <meta property="og:description" content="github地址：https://github.com/mamaral/Neon 居中设置 view 在 superview 的中心，调用 anchorInCenter()并设置view大小,相当于frame center12view1.anchorInCenter(width: 300, height: 300)imgV.anchorInCenter(width: 150, height: 15">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/neon.png">
-<meta property="og:updated_time" content="2019-03-20T13:54:41.813Z">
+<meta property="og:updated_time" content="2019-03-21T06:07:50.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第三方布局框架Neon初探">
 <meta name="twitter:description" content="github地址：https://github.com/mamaral/Neon 居中设置 view 在 superview 的中心，调用 anchorInCenter()并设置view大小,相当于frame center12view1.anchorInCenter(width: 300, height: 300)imgV.anchorInCenter(width: 150, height: 15">
@@ -162,7 +162,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 1020 words)
+                    7 minutes read (About 1021 words)
                 </span>
                 
                 
@@ -178,6 +178,7 @@
             <p>github地址：<a href="https://github.com/mamaral/Neon" target="_blank" rel="noopener">https://github.com/mamaral/Neon</a></p>
 <h2 id="居中"><a href="#居中" class="headerlink" title="居中"></a>居中</h2><p>设置 view 在 superview 的中心，调用 anchorInCenter()并设置view大小,相当于frame center<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCenter(width: 300, height: 300)</span><br><span class="line">imgV.anchorInCenter(width: 150, height: 150)</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-031e083b031a51f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2019-03-18 下午5.50.10.png"></p>
+<a id="more"></a>
 <h2 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h2><p>如果想 view 填充superview，设置距离superview的边框距离, 调用 fillSuperview()<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">imgV.fillSuperview()</span><br><span class="line">imgV.fillSuperview(left: 20, right: 5, top: 30, bottom: 5)</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/7787328-8ac56cccd11053be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2019-03-18 下午5.56.50.png"></p>
 <h2 id="角对齐"><a href="#角对齐" class="headerlink" title="角对齐"></a>角对齐</h2><p>view 相对于 superview 固定于某个角，调用anchorInCorner(),并传入要对齐哪个角的参数<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">view1.anchorInCorner(.topLeft, xPad: 20, yPad: 100, width: 100, height: 100)</span><br><span class="line">view2.anchorInCorner(.topRight, xPad: 20, yPad: 50, width: 100, height: 100)</span><br><span class="line">view3.anchorInCorner(.bottomLeft, xPad: 20, yPad: 20, width: 100, height: 100)</span><br><span class="line">view4.anchorInCorner(.bottomRight, xPad: 20, yPad: 30, width: 100, height: 100)</span><br></pre></td></tr></table></figure></p>
@@ -224,40 +225,6 @@
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<div class="notification is-danger">
-    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-        </div>
-    </div>
-</div>
-
 
 
 <div class="card card-transparent">
@@ -275,6 +242,27 @@
 </div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'ehhTt742fLaQMTQlBGYmXYV0-gzGzoHsz',
+        app_key: 'HJCbSM4yzoxhvvtfSFVYxlTK',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
