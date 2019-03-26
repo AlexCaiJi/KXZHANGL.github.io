@@ -159,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 876 words)
+                    6 minutes read (About 877 words)
                 </span>
                 
                 
@@ -173,41 +173,17 @@
         </h1>
         <div class="content">
             <p>JSPatch 是一个 iOS 动态更新框架，只需在项目中引入极小的引擎，就可以使用 JavaScript 调用任何 Objective-C/Swift 原生接口。 获得脚本语言的优势,为项目动态添加模块，或替换项目原生代码动态修复 bug,听起来是不是很秀,但是过不了审核!<br><img src="https://upload-images.jianshu.io/upload_images/7787328-22ef4446a61c3077.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="856EDF5ABFBAFD672CB1809018527804.jpg"><br>过不审核不要紧,重在探索嘛,其实我是在企业包加入的JSPatch<br><img src="https://upload-images.jianshu.io/upload_images/7787328-6c01f1bff4057003.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="9150e4e5ly1fih9xiprzzj203003c3yb.jpg"></p>
-<p>JSPatch官网:<a href="http://www.jspatch.com" target="_blank" rel="noopener">http://www.jspatch.com</a></p>
-<blockquote>
-<h3 id="1-注册JSPatch账号-创建应用-获取AppKey和私钥"><a href="#1-注册JSPatch账号-创建应用-获取AppKey和私钥" class="headerlink" title="1.注册JSPatch账号,创建应用,获取AppKey和私钥"></a>1.注册JSPatch账号,创建应用,获取AppKey和私钥</h3><p><img src="https://upload-images.jianshu.io/upload_images/7787328-f596f494cf053cfc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2019-03-26 下午2.00.06.png"><br><br></p>
-<h3 id="2-生成-RSA-密钥"><a href="#2-生成-RSA-密钥" class="headerlink" title="2.生成 RSA 密钥"></a>2.生成 RSA 密钥</h3><p>在 Mac 终端上执行 openssl，再执行以下三句命令，生成 PKCS8 格式的 RSA 公私钥，执行过程中提示输入密码，密码为空（直接回车）就行。<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">openssl &gt;</span><br><span class="line">genrsa -out rsa_private_key.pem 1024</span><br><span class="line">pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt</span><br><span class="line">rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>这样在执行的目录下就有了 rsa_private_key.pem 和 rsa_public_key.pem 这两个文件。这里生成了长度为 1024 的私钥，长度可选 1024 / 2048 / 3072 / 4096 …。<br><br></p>
-<blockquote>
-<h3 id="3-生成公钥"><a href="#3-生成公钥" class="headerlink" title="3.生成公钥"></a>3.生成公钥</h3><p>可以通过 <a href="http://www.jspatch.com/Tools/rsa" target="_blank" rel="noopener">RSA配置自动生成</a> 工具生成配置代码，打开 <code>rsa_public_key.pem</code>，复制内容到框里点击 生成配置代码 就可以了<br><br></p>
-</blockquote>
-<blockquote>
-<h3 id="4-工程配置代码-OC代码通过桥接文件在Swift中调用"><a href="#4-工程配置代码-OC代码通过桥接文件在Swift中调用" class="headerlink" title="4.工程配置代码,OC代码通过桥接文件在Swift中调用"></a>4.工程配置代码,OC代码通过桥接文件在Swift中调用</h3><p>把SDK下载下来,拖入工程,或者cocoapods集成<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pod &apos;JSPatchPlatformx&apos; </span><br><span class="line">pod &apos;JSPatch&apos;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/** JSPatch appKey */</span><br><span class="line">static NSString *const kJSPatchKey = @&quot;jsPatch官网申请的AppKey&quot;;</span><br><span class="line">static NSString *const kJSPatchPublicKey = @&quot;-----BEGIN PUBLIC KEY-----\n 生成的公钥 \n-----END PUBLIC&quot;</span><br><span class="line"></span><br><span class="line">[JSPatch startWithAppKey:kJSPatchKey];</span><br><span class="line">[JSPatch setupRSAPublicKey:kJSPatchPublicKey];</span><br><span class="line">[JSPatch setupCallback:^(JPCallbackType type, NSDictionary *data, NSError *error &#123;</span><br><span class="line">NSLog(data,error);   </span><br><span class="line">&#125;];</span><br><span class="line">[JSPatch showLog];</span><br><span class="line">#ifdef DEBUG</span><br><span class="line">[JSPatch setupDevelopment];</span><br><span class="line">#endif</span><br><span class="line">[JSPatch sync];</span><br><span class="line">[JSPatch testScriptInBundle];   /// 测试本地js补丁方法 如果打开此方法-以上方法需要全部屏蔽</span><br></pre></td></tr></table></figure>
-<p><strong>Swift中使用注意事项:</strong> </p>
-<ul>
-<li><p>所有自定义的属性和方法前面要加 @objc dynamic关键字,使其拥有runtime属性,才可以动态去修改,可以参考作者此文 [<a href="https://www.cnblogs.com/canghaixiaoyuer/p/5367760.html]" target="_blank" rel="noopener">https://www.cnblogs.com/canghaixiaoyuer/p/5367760.html]</a></p>
-</li>
-<li><p>并且一定要继承NSObject的类才支持修改,例如继承Array就不支持修改</p>
-</li>
-<li>补丁的版本号一定要和工程版本号同步</li>
-<li>注意在 JSPatch 平台的规范里，JS脚本的文件名必须是 main.js</li>
-<li>使用 defineClass() 覆盖 Swift 类时，类名应为 项目名.原类名，例如项目 demo 里用 Swift 定义了 ViewController 类，在 JS 覆盖这个类方法时要这样写：<br>defineClass(‘demo.ViewController’, {})</li>
-<li>对于调用已在 swift 定义好的类，也是一样：<br>require(‘demo.ViewController’)<br><br></li>
-</ul>
-<blockquote>
-<h3 id="5-配置补丁JS文件"><a href="#5-配置补丁JS文件" class="headerlink" title="5.配置补丁JS文件"></a>5.配置补丁JS文件</h3><p>如下:<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">defineClass(&apos;JSPatchSwift.KXCrashTableVC&apos;, &#123;</span><br><span class="line">viewDidLoad: function() &#123;</span><br><span class="line">console.log(&apos;js viewDidLoad begin&apos;)</span><br><span class="line">self.ORIGviewDidLoad()</span><br><span class="line">console.log(&apos;js viewDidLoad end&apos;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">testLog: function() &#123;</span><br><span class="line">console.log(&apos;js ViewController testlog&apos;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">tableView_cellForRowAtIndexPath: function(tableView, indexPath) &#123;</span><br><span class="line">console.log(&apos;tableView_cellForRowAtIndexPath testlog&apos;)</span><br><span class="line">var cell = tableView.dequeueReusableCellWithIdentifier(&quot;reuseIdentifier&quot;)</span><br><span class="line">cell.textLabel().setText(self.dataArray().toJS()[indexPath.row()])</span><br><span class="line">return cell</span><br><span class="line">&#125;          </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<ul>
-<li>通过[JSPatch testScriptInBundle]; 方法测试没有问题,补丁上传到JSPatch官网后台即可</li>
-<li>补丁只能留存一个版本,不能叠加,当下一个版本发布时尽快用原生代码替换</li>
-</ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/7787328-30e9d91356444f4f.gif?imageMogr2/auto-orient/strip" alt="07A45015874163A4E8567AB97B623A0C.gif"><br>最后附上代码地址:<a href="https://github.com/KXZHANGL/KXJSPatchSwift" target="_blank" rel="noopener">https://github.com/KXZHANGL/KXJSPatchSwift</a></p>
-
+<p>JSPatch官网:<a href="http://www.jspatch.com" target="_blank" rel="noopener">http://www.jspatch.com</a><br></p>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/03/26/JSPatch-热更新/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>

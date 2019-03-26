@@ -17,7 +17,7 @@
 <meta property="og:description" content="JSPatch 是一个 iOS 动态更新框架，只需在项目中引入极小的引擎，就可以使用 JavaScript 调用任何 Objective-C/Swift 原生接口。 获得脚本语言的优势,为项目动态添加模块，或替换项目原生代码动态修复 bug,听起来是不是很秀,但是过不了审核!过不审核不要紧,重在探索嘛,其实我是在企业包加入的JSPatch JSPatch官网:http://www.jspatch.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/JSPatch.png">
-<meta property="og:updated_time" content="2019-03-26T07:20:01.053Z">
+<meta property="og:updated_time" content="2019-03-26T07:28:31.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSPatch 热更新">
 <meta name="twitter:description" content="JSPatch 是一个 iOS 动态更新框架，只需在项目中引入极小的引擎，就可以使用 JavaScript 调用任何 Objective-C/Swift 原生接口。 获得脚本语言的优势,为项目动态添加模块，或替换项目原生代码动态修复 bug,听起来是不是很秀,但是过不了审核!过不审核不要紧,重在探索嘛,其实我是在企业包加入的JSPatch JSPatch官网:http://www.jspatch.">
@@ -162,7 +162,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 876 words)
+                    6 minutes read (About 877 words)
                 </span>
                 
                 
@@ -176,7 +176,7 @@
         </h1>
         <div class="content">
             <p>JSPatch 是一个 iOS 动态更新框架，只需在项目中引入极小的引擎，就可以使用 JavaScript 调用任何 Objective-C/Swift 原生接口。 获得脚本语言的优势,为项目动态添加模块，或替换项目原生代码动态修复 bug,听起来是不是很秀,但是过不了审核!<br><img src="https://upload-images.jianshu.io/upload_images/7787328-22ef4446a61c3077.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="856EDF5ABFBAFD672CB1809018527804.jpg"><br>过不审核不要紧,重在探索嘛,其实我是在企业包加入的JSPatch<br><img src="https://upload-images.jianshu.io/upload_images/7787328-6c01f1bff4057003.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="9150e4e5ly1fih9xiprzzj203003c3yb.jpg"></p>
-<p>JSPatch官网:<a href="http://www.jspatch.com" target="_blank" rel="noopener">http://www.jspatch.com</a></p>
+<p>JSPatch官网:<a href="http://www.jspatch.com" target="_blank" rel="noopener">http://www.jspatch.com</a><br><a id="more"></a></p>
 <blockquote>
 <h3 id="1-注册JSPatch账号-创建应用-获取AppKey和私钥"><a href="#1-注册JSPatch账号-创建应用-获取AppKey和私钥" class="headerlink" title="1.注册JSPatch账号,创建应用,获取AppKey和私钥"></a>1.注册JSPatch账号,创建应用,获取AppKey和私钥</h3><p><img src="https://upload-images.jianshu.io/upload_images/7787328-f596f494cf053cfc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕快照 2019-03-26 下午2.00.06.png"><br><br></p>
 <h3 id="2-生成-RSA-密钥"><a href="#2-生成-RSA-密钥" class="headerlink" title="2.生成 RSA 密钥"></a>2.生成 RSA 密钥</h3><p>在 Mac 终端上执行 openssl，再执行以下三句命令，生成 PKCS8 格式的 RSA 公私钥，执行过程中提示输入密码，密码为空（直接回车）就行。<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">openssl &gt;</span><br><span class="line">genrsa -out rsa_private_key.pem 1024</span><br><span class="line">pkcs8 -topk8 -inform PEM -in rsa_private_key.pem -outform PEM –nocrypt</span><br><span class="line">rsa -in rsa_private_key.pem -pubout -out rsa_public_key.pem</span><br></pre></td></tr></table></figure></p>
